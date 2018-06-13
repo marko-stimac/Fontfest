@@ -1,0 +1,16 @@
+
+$font-primary: 'Source Sans Pro';
+$font-secondary: 'Asap Condensed';
+
+$color-primary: #0366d6;
+$color-black: #222;
+$color-red: #dd3030;
+$color-green: #11c138;
+$color-border: #f0f0f0;
+
+
+@mixin nowrap {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

@@ -1,0 +1,118 @@
+
+.form-group {
+	margin-bottom: 2rem;
+	.field-title {
+		display: block;
+		margin-bottom: .5rem;
+		.link {
+			color: $color-primary;
+		}
+	}
+}
+
+.form-control {
+	font: 400 1.1rem $font-primary;
+	color: #333;
+	width: 100%;
+	height: 45px;
+	padding: 1rem;
+	padding: 6px 8px;
+	background-color: #fff;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+	&:disabled {
+		opacity: .5;
+	}
+	~ .field-title {
+		opacity: .5 !important;
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+select {
+	text-transform: capitalize;
+	color: #495057;
+}
+
+.checkbox {
+	margin-top: .75rem;
+	label {
+		font-weight: 400;
+		font-size: 1.1rem;
+		display: block;
+		position: relative;
+		padding-left: 2.3rem;
+		cursor: pointer;
+		&:first-letter {
+			text-transform: uppercase;
+		}
+	}
+	span {
+		transition: opacity 250ms;
+	}
+	input {
+		position: absolute;
+		left: 0;
+		z-index: -1;
+		opacity: 0;
+		visibility: hidden;
+		&:disabled {
+			~ span.label {
+				cursor: default;
+				opacity: .5;
+				.sublabel {
+					display: inline-block;
+					opacity: .5;
+				}
+			}
+			&:checked {
+				~ .checkbox__indicator {
+					background: rgba($color-primary, .5) !important;
+				}
+			}
+		}
+		&:checked {
+			~ .checkbox__indicator {
+				background: linear-gradient(to bottom right, $color-primary, lighten($color-primary, 5%));
+				&:after {
+					display: block;
+				}
+			}
+		}
+		&:not(:checked) {
+			~ .label {
+				opacity: .6;
+			}
+		}
+	}
+	&__indicator {
+		position: absolute;
+		top: 0px;
+		left: 0;
+		height: 20px;
+		width: 20px;
+		background: linear-gradient(to bottom right, #dedede, #eee);
+		border-radius: 3px;
+		&:after {
+			content: '';
+			position: absolute;
+			display: none;
+			left: 8px;
+			top: 4px;
+			width: 5px;
+			height: 10px;
+			border: solid #fff;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+
+
+
+

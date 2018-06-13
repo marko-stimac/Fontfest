@@ -1,0 +1,82 @@
+
+.content--typography {
+	/* max-width: 1200px; */
+}
+
+.is-draggable {
+	display: flex;
+	position: relative;
+	&:hover {
+		.buttons {
+			opacity: 1;
+		}
+	}
+	.btn {
+		margin: 0 .25rem;
+		padding: .75rem .5rem .5rem;
+		svg {
+			width: 18px;
+			height: 18px;
+			path {
+				fill: #fff;
+			}
+		}
+		&.locked {
+			svg {
+				path {
+					//fill-opacity: .3
+					fill: $color-green;
+				}
+			}
+		}
+	}
+}
+
+.buttons {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -75%);
+	background-color: $color-primary;
+	border-radius: 2px;
+	display: flex;
+	opacity: 0;
+}
+
+.is-editable {
+	cursor: default;
+	transition: opacity 200ms;
+	position: relative;
+	&.active {
+		background: #f1f1f1;
+	/* 	&:before {
+			content: '\00BB';
+			position: absolute;
+			top: 0;
+			left: -2.5rem;
+			opacity: .25;
+			font-size: 2.5rem;
+			} */
+		}
+	}
+
+	.slider__input {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 3px;
+		background: #eee;
+		outline: none;
+		transition: opacity .2s;
+	}
+
+
+	.addnew {
+		margin-top: 60px;
+		transition: opacity 200ms;
+		.btn {
+			text-transform: uppercase;
+			font-size: 1.5rem;
+			font-weight: 500;
+			opacity: .25;
+		}
+	}

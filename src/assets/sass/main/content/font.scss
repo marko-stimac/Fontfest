@@ -1,0 +1,56 @@
+
+.content--font {
+	.title-wrapper {
+		display: flex;
+		width: 100%;
+		max-width: 100%;
+		border-bottom: 1px solid $color-border;
+		h1 {
+			font-size: 3.5rem;
+			margin-right: auto;
+		}
+		dl {
+			flex-basis: 150px;
+			margin-right: 30px;
+		}
+	}
+	.content-wrapper {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+		border-bottom: 1px solid $color-border;
+		& > div {
+			display: flex;
+			align-items: center;
+		}
+		.variant {
+			color: #555;
+			font-weight: 400;
+		}
+		.title {
+			font-size: 48px;
+			margin-right: auto;
+			line-height: 1.35em;
+			@include nowrap();
+		}
+	}
+	.meta-wrapper {
+		padding: 3rem 0 2rem;
+		display: flex;
+		dl {
+			flex-basis: 13rem;
+			&.big {
+				flex-basis: 22rem;
+			}
+		}
+	}
+	dl {
+		font-size: 1.1rem;
+	}
+	ul {
+		padding-left: 20px;
+	}
+	li {
+		line-height: 1.8em;
+		font-size: 1.1rem;
+	}
+}

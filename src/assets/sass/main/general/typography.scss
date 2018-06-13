@@ -1,0 +1,40 @@
+body {
+	font: 400 1rem $font-primary;
+	color: #444;
+}
+
+h1 {
+	font-size: 2rem;
+	line-height: 1;
+	margin-bottom: 1.75rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+p, ul {
+	font-size: 1rem;
+	line-height: 1.5em;
+	margin-bottom: .75rem;
+}
+
+.content {
+	div, p, ul {
+		font-size: 1.2rem;
+		line-height: 1.65;
+	}
+	&--help {
+		div, p, ul {
+			font-size: 1.1rem;
+		}
+	}
+	h3 {
+		font-weight: 700;
+	}
+}
