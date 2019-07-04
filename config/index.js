@@ -55,7 +55,7 @@ build: {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'https://marko-stimac.github.io/FontFest',
+    assetsPublicPath: 'https://marko-stimac.github.io/Fontfest',
 
     /**
      * Source Maps

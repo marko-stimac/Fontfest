@@ -8,7 +8,7 @@ import Export from '@/components/Content/Export'
 Vue.use(Router)
 
 const router = new Router({
-	base: '/FontFest',
+	base: '/Fontfest',
 	mode: 'history',
 	routes: [
 	{
