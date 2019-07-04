@@ -3,23 +3,18 @@
 		
 		<li>
 			<router-link :to="{name: 'Typography'}">
-				← Back to typography
+				← Back to playground
 			</router-link>
 		</li>
 		<li>
-			<button class="btn" @click="toggleFavorite">
+			<button class="btn btn--favorite" @click="toggleFavorite">
 				<span class="favorite" v-if="favorite">
-					Added to favorites
+					Remove from favorites
 				</span>
 				<span v-else>
 					Add to favorites
 				</span>
 			</button>
-		</li>
-		<li>
-			<router-link :to="{name: 'About'}">
-				About Fontfest
-			</router-link>
 		</li>
 
 	</ul>

@@ -1,16 +1,27 @@
 <template>
 	<div id="app" :class="{ 'dark-theme': darkTheme, 'distraction-mode': distractionMode }">
-		<Loader v-show="!loaded"></Loader>
-		<div v-if="loaded">
 			
-			<Settings/>
-			<FontList/>
-			<div class="content">
-				<router-view>
-				</router-view>
+		<div class="leftside">
+			<div class="topbar topbar--sidebar">
+				<h1 class="topbar__title">1. Filter selection and choose your fonts</h1>
 			</div>
-
+			<div class="leftside__inside">
+				<Settings/>
+				<FontList/>
+			</div>
 		</div>
+		<div class="content">
+			<div class="topbar topbar--content">
+				<h2 class="topbar__title">2. Play with font combinations</h2>
+				<router-link :to="{name: 'About'}" class="topbar__about">
+					About
+				</router-link>
+			</div>
+			<div class="content__inside">
+				<router-view/>
+			</div>
+		</div>
+
 	</div>
 </template>
 
@@ -21,7 +32,6 @@
 
 	import Settings from './components/Settings.vue'
 	import FontList from './components/FontList.vue'
-	import Loader from './components/Partials/Loader.vue'
 
 	export default {
 		name: 'App',
@@ -32,8 +42,7 @@
 		},
 		components: {
 			Settings,
-			FontList,
-			Loader
+			FontList
 		},
 		computed: {
 			...mapGetters([
@@ -55,7 +64,6 @@
 			this.$store.dispatch('getFontList')
 			// Load default FontList
 			this.$store.dispatch('loadFontList', 'Roboto Condensed:300,300i,400,400i,700,700i')
-			this.$store.dispatch('loadFontList', 'Ribeye:400')
 		},
 		mounted() {
 			this.loaded = true

@@ -5,7 +5,6 @@ import { mutations } from './mutations'
 import { actions } from './actions'
 import { getters } from './getters'
 import predefined from './predefined/default'
-import style_1 from './predefined/data/style_1'
 
 Vue.use(Vuex)
 

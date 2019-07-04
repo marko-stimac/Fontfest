@@ -3,70 +3,74 @@
 
 		<NavOther/>
 
-		<div class="title-wrapper">
-			<h1 :style="{ fontFamily: $route.params.name }">{{ $route.params.name }}</h1>
+		<div class="content--font__inside">
 
-		</div>
+			<div class="title-wrapper">
+				<h1 :style="{ fontFamily: $route.params.name }">{{ $route.params.name }}</h1>
 
-
-		<div class="content-wrapper" :style="{ fontFamily: $route.params.name }">
-			<div class="text" v-for="variant in fontVariantsNoItalics">
-				<span class="title nowrap" contenteditable="true" :style="{ fontWeight: variant }">
-					{{ text }}
-				</span>
-				<span class="variant">{{ variant }}</span>
 			</div>
-		</div>
 
-		<div class="meta-wrapper">
-			<dl>
-				<dt>Category</dt>
-				<dd>{{ font.category }}</dd>
-			</dl>
-			<dl>
-				<dt>Variants</dt>
-				<dd>
-					<ul>
-						<li v-for="variant in font.variants">
-							{{ variant }}
-						</li>					
-					</ul>
-				</dd>
-			</dl>
-			<dl>
-				<dt>Subsets</dt>
-				<dd>
-					<ul>
-						<li v-for="subset in fontSubsets">
-							{{ subset }}
-						</li>					
-					</ul>
-				</dd>
-			</dl>
-			<dl>
-				<dt>Version</dt>
-				<dl>{{ font.version }}</dl>
-				<dt>Last modified</dt>
-				<dd>{{ lastModified }}</dd>
-			</dl>
-			<dl class="big">
-				<dt>
-					<a class="link" :href="externalLink($route.params.name)" target="_blank">View {{ $route.params.name }} on Google fonts</a>
-				</dt>
-			</dl>
-		</div>
 
-		<div class="files-wrapper">
-			<dl>
-				<dt>Download files</dt>
-				<dd>
-					<ul>
-						<li v-for="(file, index) in font.files">
-							<a class="link" :href="file">{{ index }}</a>
-						</li>
-					</ul>
-				</dd>
-			</dl>
+			<div class="content-wrapper" :style="{ fontFamily: $route.params.name }">
+				<div class="text" v-for="variant in fontVariantsNoItalics">
+					<span class="title nowrap" contenteditable="true" :style="{ fontWeight: variant }">
+						{{ text }}
+					</span>
+					<span class="variant">{{ variant }}</span>
+				</div>
+			</div>
+
+			<div class="meta-wrapper">
+				<dl>
+					<dt>Category</dt>
+					<dd>{{ font.category }}</dd>
+				</dl>
+				<dl>
+					<dt>Variants</dt>
+					<dd>
+						<ul>
+							<li v-for="variant in font.variants">
+								{{ variant }}
+							</li>					
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>Subsets</dt>
+					<dd>
+						<ul>
+							<li v-for="subset in fontSubsets">
+								{{ subset }}
+							</li>					
+						</ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt>Version</dt>
+					<dl>{{ font.version }}</dl>
+					<dt>Last modified</dt>
+					<dd>{{ lastModified }}</dd>
+				</dl>
+				<dl>
+					<dt>
+						<a class="link" :href="externalLink($route.params.name)" target="_blank">View {{ $route.params.name }} on Google fonts</a>
+					</dt>
+				</dl>
+			</div>
+
+			<div class="files-wrapper">
+				<dl>
+					<dt>Download files</dt>
+					<dd>
+						<ul>
+							<li v-for="(file, index) in font.files">
+								<a class="link" :href="file">{{ index }}</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+
 		</div>
 
 	</div>

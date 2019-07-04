@@ -1,60 +1,143 @@
 
 #app {
-	height: 100vh;
+	//height: 100vh;
 }
+
+.topbar {
+	border-bottom: 1px solid $color-black;
+    position: fixed;
+    top: 0;
+	left: 0;
+    width: 100%;
+	background: #fff;
+    padding: .5rem 1rem;
+	@media screen and (min-width: $screen-lg-min) {
+		border-right: 1px solid $color-black;   
+		display: flex;
+		align-items: center;
+		width: auto;
+		height: 50px;
+		padding: 1rem;
+	}
+	&__title {
+		color: #222;
+		line-height: 1.5;
+		font-size: .9rem;
+		font-weight: 700;
+		margin: 0;
+		@media screen and (min-width: $screen-lg-min) {
+			font-size: 1.2rem;
+		}
+	}
+	&--sidebar {
+		@media screen and (min-width: $screen-lg-min) {
+			width: 450px;
+		}
+	}
+	&--content {
+		left: 450px;
+		width: calc(100% - 450px);
+		@media screen and (min-width: $screen-lg-min) {
+			display: flex;
+			justify-content: space-between;
+			border-right: 0;
+		}
+		@media screen and (max-width: $screen-lg) {
+			border-top: 1px solid $color-black;
+		}
+	}
+	&__about {
+		font-size: 1rem;
+		margin-right: 2rem;
+	}
+}
+
 
 .settings {
 	position: fixed;
 	left: 0;
-	top: 0;
+    top: 35px;
 	bottom: 0;
-	width: 240px;
+    width: 40%;
 	padding: 1rem;
 	border-right: 1px solid $color-border;
-	overflow: auto;
+	max-height: 200px;
+    overflow-x: hidden;
+	overflow-y: scroll;
 	transition: opacity 200ms;
-	.brand {
-		font-size: 2.8rem;
-		font-weight: 700;
-		margin-bottom: 5px;
-		text-align: center;
-		a {
-			color: #444;
+	@media screen and (min-width: $screen-lg-min) {
+		width: 210px;
+		max-height: none;
+		overflow-y: auto;
+		overflow-x: hidden;
+		top: 50px;
+	}
+	&__info {
+	}
+	&__selected {
+		position: relative;
+		padding-bottom: 1rem;    
+		margin-bottom: 2rem;
+		&:after {
+			content: '';
+			height: 1px;
+			background: #ddd;
+			left: -15px;
+			width: 240px;
+			position: absolute;
+			bottom: 0;
 		}
 	}
-	.families-info {
-		margin-bottom: 2.5rem;
-		display: block;
-		letter-spacing: .4px;
-		text-align: center;
-		position: relative;
+	> div {
+		font-size: .8rem;
+		font-weight: 400;
 	}
 	strong {
 		color: $color-primary;
+	}
+	&__group {
+		margin-bottom: 2rem;
+	}
+	&__group-title {
+		margin-bottom: .5rem;
+		display: inline-block;
+		&--categories {
+			margin-bottom: .5rem;
+		}
 	}
 }
 
 
 .fontlist {
 	position: fixed;
-	top: 0;
+    top: 35px;
 	bottom: 0;
-	width: 16rem;
-	margin-left: 16rem;
+    width: 60%;
+	margin-left: 40%;
 	margin-bottom: 0;
-	padding: 1.2rem 1rem;
-	overflow: auto;
+    padding: 1rem;
+    padding-top: .5rem;
 	border-right: 1px solid $color-border;
 	font-size: 1.1rem;
-	transition: opacity 100ms;
+	max-height: 200px;
+	overflow-y: scroll;
+    overflow-x: hidden;
+	@media screen and (min-width: $screen-lg-min) {
+		width: 240px;
+		margin-left: 210px;
+		max-height: none;
+		overflow: auto;
+		overflow-y: auto;
+		overflow-x: hidden;
+		top: 50px;
+	}
 	li {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		line-height: 2;
 		a {
 			width: 100%;
-			font: 400 1.2rem $font-secondary;
+			font: 400 .9rem/2 $font-secondary;
 			@include nowrap();
 			&.router-link-active {
 				color: $color-primary !important;
@@ -70,13 +153,12 @@
 				width: 15px;
 				margin-top: 2px;
 				transition: all 200ms;
+				fill: $color-primary;
 			}
 			&--yes {
-				fill: $color-red;
 			}
 			&--no {
-				fill: #dfdfdf;
-				fill-opacity: .5;
+				fill-opacity: .1;
 			}
 		}
 	}
@@ -89,38 +171,111 @@
 
 
 .content {
-	height: 100vh;
-	padding-right: 3rem;
 	transition: opacity 200ms, transform 500ms;
-	@media screen and (min-width: 992px) {
-		margin-left: 35rem;
-		padding-right: 2rem;
+	//margin-top: 220px;
+    border-top: 1px solid #eee;
+    margin-top: 235px;
+	@media screen and (min-width: $screen-lg-min) {
+		margin-top: -50px;
+		margin-left: 450px;
+		padding-right: 0;
+		height: 100vh;
+		border-top: 0;
+		padding-right: 3rem;
+	}
+	&__inside {
+		background: #fff;
+		z-index: 1000;
+		position: relative;
+		@media screen and (min-width: $screen-lg-min) {
+			padding-left: 2rem;
+			padding-right: 3rem;
+			margin-top: 100px;
+		}
+	}
+	&--font__inside {
+		@media screen and (max-width: $screen-lg) {
+			padding: 0 1rem;
+		}
 	}
 	ul:not(.nav) {
 		list-style-type: disc;
 		padding-left: 1.3rem;
+		@media screen and (min-width: $screen-lg-min) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+// Navigacija za content
+.nav {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid $color-border;
+	@media screen and (min-width: $screen-lg-min) {
 		margin-bottom: 2rem;
+	}
+	li {
+		display: flex;
+		align-items: center;
+		button, a {
+			font-size: .75rem;
+			text-decoration: underline;
+			margin: 0 1rem;
+			text-align: center;
+			padding: .5rem 0;
+			@media screen and (min-width: $screen-lg-min) {
+				padding: 1rem 0;
+				margin: 0 2rem 0;
+			}
+			&:hover {
+				color: $color-primary;
+			}
+		}
+	}
+	&--typography {
+		@media screen and (max-width: $screen-lg) {
+			padding: 0 1rem;
+		}
+	}
+	&--other {
+		li {
+			&:first-child {
+				a {
+					color: $color-primary;
+					&:hover, &:focus {
+						color: $color-primary;
+					}
+				}
+			}
+		}
 	}
 }
 
 
-
 .options {
 	width: 250px;
-	padding: 1rem;
+	padding: .75rem 1rem 1rem;
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	right: 0;
 	background: #fff;
-	padding: 2rem;
+    padding: 1rem;
 	border-left: 1px solid $color-border;
 	opacity: 0;
 	overflow: auto;
 	visibility: hidden;
 	transition: opacity 250ms;
+	.form-group {
+		font-size: initial;
+		line-height: initial;
+		margin-bottom: 1rem;
+	}
 	.form-group .field-title, label, select {
-		font-size: 1rem;
+		font-size: .7rem;
+		font-weight: 500;
+		color: #444;
 	}
 	&.active {
 		opacity: 1;

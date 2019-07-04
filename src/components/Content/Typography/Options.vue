@@ -12,6 +12,7 @@
 			<select id="fontFamily" class="form-control" v-model="fontFamily">
 				<option :value="font.family" v-for="font in getFontsAvailable">{{ font.family }}</option>
 			</select>
+			<small class="form-group__small">(Options depend on filtered font list in the sidebar)</small>
 		</div>
 
 		<div class="form-group">
@@ -51,8 +52,8 @@
 		</div>
 
 		<div class="form-group">
-			<label for="marginBottom" class="field-title">Margin bottom <span>(px)</span></label>
-			<input id="marginBottom" type="number" class="form-control" v-model="marginBottom">
+			<label for="marginBottom" class="field-title">Margin bottom <span>(rem)</span></label>
+			<input id="marginBottom" type="number" class="form-control" v-model="marginBottom" step="0.5">
 		</div>
 
 

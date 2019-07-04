@@ -8,19 +8,24 @@
 			color: $color-primary;
 		}
 	}
+	&__small {
+		font-size: .65rem;
+		line-height: 1;
+		display: block;
+		margin-top: .5rem;
+	}
 }
 
 .form-control {
-	font: 400 1.1rem $font-primary;
-	color: #333;
+	font: 400 .8rem $font-primary;
+    color: $color-black;
 	width: 100%;
-	height: 45px;
-	padding: 1rem;
+	height: 35px;
 	padding: 6px 8px;
+    box-shadow: none;
 	background-color: #fff;
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
-	box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
 	&:disabled {
 		opacity: .5;
 	}
@@ -39,21 +44,22 @@ select {
 }
 
 .checkbox {
-	margin-top: .75rem;
+    margin-bottom: .5rem;
+    margin-left: .5rem;
 	label {
-		font-weight: 400;
-		font-size: 1.1rem;
+		font-size: .85rem;
+		font-weight: 500;
 		display: block;
 		position: relative;
-		padding-left: 2.3rem;
+		padding-left: 2rem;
 		cursor: pointer;
 		&:first-letter {
 			text-transform: uppercase;
 		}
 	}
-	span {
+	/* span {
 		transition: opacity 250ms;
-	}
+	} */
 	input {
 		position: absolute;
 		left: 0;
@@ -93,18 +99,18 @@ select {
 		position: absolute;
 		top: 0px;
 		left: 0;
-		height: 20px;
-		width: 20px;
+		height: 17px;
+		width: 17px;
 		background: linear-gradient(to bottom right, #dedede, #eee);
 		border-radius: 3px;
 		&:after {
 			content: '';
 			position: absolute;
 			display: none;
-			left: 8px;
+			left: 7px;
 			top: 4px;
-			width: 5px;
-			height: 10px;
+			width: 4px;
+			height: 8px;
 			border: solid #fff;
 			border-width: 0 2px 2px 0;
 			transform: rotate(45deg);

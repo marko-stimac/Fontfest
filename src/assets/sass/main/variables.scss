@@ -1,12 +1,26 @@
 
-$font-primary: 'Source Sans Pro';
-$font-secondary: 'Asap Condensed';
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Roboto Condensed', sans-serif;
 
 $color-primary: #0366d6;
-$color-black: #222;
+$color-black: #000;
 $color-red: #dd3030;
-$color-green: #11c138;
+$color-yellow: #e7f235;
 $color-border: #f0f0f0;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1400px;
+$screen-xxxl: 1600px;
+
+$screen-sm-min: $screen-sm + 1px;
+$screen-md-min: $screen-md + 1px;
+$screen-lg-min: $screen-lg + 1px;
+$screen-xl-min: $screen-xl + 1px;
+$screen-xxl-min: $screen-xxl + 1px;
+$screen-xxxl-min: $screen-xxxl + 1px;
 
 
 @mixin nowrap {

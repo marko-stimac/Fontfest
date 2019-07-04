@@ -1,6 +1,6 @@
 
 #app.distraction-mode {
-	.settings, .fontlist{
+	.topbar, .settings, .fontlist {
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -17,7 +17,7 @@
 		padding: 0 0 50px;
 		overflow-y: scroll;
 		.inside {
-			max-width: 1200px;
+			max-width: 850px;
 			margin: auto;
 			&:hover {
 				.addnew {

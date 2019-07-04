@@ -7,29 +7,10 @@
 			</svg>
 		</button>
 
+		<NavTypography/>
+
 		<div class="content--typography">
 			<div class="inside">
-
-				<NavTypography/>
-
-				<!-- {{ content }} -->
-
-
-				<!-- <div id="toolbar">
-					<select class="ql-size">
-						<option value="small">adf</option>
-						<option selected>asdf</option>
-					</select>
-					<button class="ql-bold">asdfasdf</button>
-					<button class="ql-script" value="sub">asdfasdf</button>
-				</div> -->
-				<!-- <quill-editor v-model="content"
-				ref="myQuillEditor"
-				:options="editorOption"
-				@blur="onEditorBlur($event)"
-				@focus="onEditorFocus($event)"
-				@ready="onEditorReady($event)">
-			</quill-editor> -->
 
 			<draggable v-model="textElements" :move="checkMove" :options="{handle: '.btn-drag'}" >
 				<transition-group>
@@ -40,14 +21,9 @@
 						:style="element.styles" 
 						:class="{active: getFontSettingsVisibility && getActiveFontIndex == index-1}">
 						{{ element.text }}
-					</div>
-					<div class="buttons">
-						<!-- 	edit button
-						<button class="btn">
-								<svg viewBox="0 0 24 24">
-									<path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
-								</svg>
-							</button> -->
+						</div>
+						<div class="buttons">
+			
 							<!-- Settings -->
 							<button @click="enableFontSettingsVisibility(index)" class="btn">
 								<svg viewBox="0 0 24 24">
@@ -78,10 +54,6 @@
 			</draggable>
 
 			<Options/>
-			<!-- <div class="slider">
-				<input type="range" min="0" max="960" value="sliderValue" class="slider__input" @change="changeSliderValue">
-			</div>
-			{{sliderValue}} -->
 			<AddNew/>
 
 		</div>
@@ -98,37 +70,12 @@ import NavTypography from '../Partials/NavTypography.vue'
 import Options from './Typography/Options.vue'
 import AddNew from './Typography/AddNew.vue'
 
-//import 'quill/dist/quill.core.css'
-//import 'quill/dist/quill.snow.css'
-//import Quill from 'quill'
-
-//import { quillEditor } from 'vue-quill-editor'
 
 export default {
 	name: 'Typography',
 	data() {
 		return {
-			fontSettingsVisibility: false,
-		/*	sliderValue: 960,
-			content: '<h2>I am Example</h2>',
-			editorOption: {
-				modules: {
-					container:
-					[
-					[{ 'placeholder': ['[GuestName]', '[HotelName]'] }], 
-					['clean']  
-					],
-					handlers: {
-						"placeholder": function (value) { 
-							if (value) {
-								const cursorPosition = this.quill.getSelection().index;
-								this.quill.insertText(cursorPosition, value);
-								this.quill.setSelection(cursorPosition + value.length);
-							}
-						}
-					}
-				}
-			}  */          
+			fontSettingsVisibility: false,     
 		}
 	},
 	created() {
@@ -137,22 +84,11 @@ export default {
 		this.listenUserEvent()
 
 	},
-	mounted() {
-		
-
-		
-		const placeholderPickerItems = Array.prototype.slice.call(document.querySelectorAll('.ql-placeholder .ql-picker-item'));
-		placeholderPickerItems.forEach(item => item.textContent = item.dataset.value);
-		document.querySelector('.ql-placeholder .ql-picker-label').innerHTML
-		= 'Insert placeholder' + document.querySelector('.ql-placeholder .ql-picker-label').innerHTML;
-		
-	},
 	components: {
 		NavTypography,
 		Draggable,
 		Options,
 		AddNew,
-		//quillEditor
 	},
 	methods: {
 		enableFontSettingsVisibility(index) {
@@ -176,24 +112,9 @@ export default {
 		toggleLock(index) {
 			this.$store.commit('updateTextElementLock', index-1)
 		},
-		changeSliderValue(a,b) {
-		},
 		checkMove(evt) {
 			//return false
-		},
-		/*onEditorBlur(quill) {
-			console.log('editor blur!', quill)
-		},
-		onEditorFocus(quill) {
-			console.log('editor focus!', quill)
-		},
-		onEditorReady(quill) {
-			console.log('editor ready!', quill)
-		},
-		onEditorChange({ quill, html, text }) {
-			console.log('editor change!', quill, html, text)
-			this.content = html
-		}*/
+		}
 	},
 	computed: {
 		...mapGetters([
@@ -209,22 +130,7 @@ export default {
 			set(value) {
 				this.$store.commit('updateTextElementsOrder', value)
 			}
-		},
-		changeSliderValue: {
-			get() {
-				return this.sliderValue
-			},
-			set(value) {
-				this.sliderValue = 400
-			}
-		},
-		/*editor() {
-			return this.$refs.myQuillEditor.quill
-		}*/
-	},
-	mounted() {
-		//this.toolbar = document.getElementById('#toolbar');
-		//console.log('this is current quill instance object', this.editor)
+		}
 	}
 }
 </script>

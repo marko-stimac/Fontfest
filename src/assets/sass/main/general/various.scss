@@ -10,6 +10,9 @@ a {
 		color: $color-primary;
 		text-decoration: underline;
 	}
+	&.router-link-active {
+		color: initial !important;
+	}
 }
 
 .btn {
@@ -34,9 +37,21 @@ a {
 		opacity: 0;
 		visibility: hidden;
 		svg {
-			height: 30px;
-			width: 30px;
+			height: 44px;
+			width: 44px;
 			stroke: #f4f4f4;
+		}
+	}
+	&--favorite {
+		background: $color-primary;
+		color: #fff;
+		font-weight: 600;
+		text-decoration: none;
+		padding: .5rem 1rem !important;
+		text-decoration: none !important;
+		&:hover, &:focus {
+			background: lighten($color-primary, 5%) !important;
+			color: #fff !important;
 		}
 	}
 }

@@ -29,7 +29,7 @@ export const mutations = {
 				letterSpacing: '0em',
 				textTransform: 'initial',
 				fontStyle: 'normal',
-				marginBottom: '20px'
+				marginBottom: '1rem'
 			},
 			lock: false
 		}
@@ -84,7 +84,7 @@ export const mutations = {
 		state.textElements[payload.index].styles.fontStyle = payload.fontStyle
 	},
 	updateActiveMarginBottom(state, payload) {
-		state.textElements[payload.index].styles.marginBottom = payload.marginBottom + 'px'
+		state.textElements[payload.index].styles.marginBottom = payload.marginBottom + 'rem'
 	},
 	// Set font as favorite
 	addToFavorites(state, family) {

@@ -1,7 +1,13 @@
 
 #app.dark-theme {
-	background-color: #222;
+	background-color: #111;
 	color: #fff !important;
+	.topbar {
+		background: #111;
+	}
+	.topbar__title {
+		color: #777;
+	}
 	.settings, .fontlist, .families-info, .nav, .options {
 		border-color: #343434;
 		color: #999;
@@ -13,6 +19,18 @@
 				fill: #999;
 			}
 		}
+	}
+	.settings strong {
+		color: #aaa;
+	}
+	.settings, .fontlist, .content__inside {
+		background: #222;
+	}
+	.is-editable.active {
+		background: #222;
+	}
+	div, p, li {
+		color: #777;
 	}
 	input, select {
 		background: #333;
@@ -38,5 +56,15 @@
 	::-webkit-scrollbar-track {
 		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 		background-color: #999;
+	}
+	.buttons {
+		background: #333;
+	}
+	.btn--favorite {
+		color: #ddd !important;
+	}
+	.addnew .btn {
+		color: #ccc !important;
+		background: #333;
 	}
 }

@@ -1,31 +1,23 @@
 <template>
-	<div class="content--export">
-
+	<div>
 		<NavOther/>
+		<div class="content--export">
 
-		<h1>Export settings</h1>
+			<div v-for="(el, i) in getTextElements">div:nth-child({{ i }}) {<br>
+					font-family: '{{ el.styles.fontFamily}}';<br>
+					font-weight: {{ el.styles.fontWeight }} ;<br>
+					font-size: {{ el.styles.fontSize}};<br>
+					font-style: normal;<br>
+					line-height: {{ el.styles.lineHeight }};<br>
+					letter-spacing: {{ el.styles.letterSpacing }};<br>
+					text-transform: {{ el.styles.textTransform }};<br>
+					margin-bottom: {{ el.styles.marginBottom }};<br>
+				}<br><br>
 
-		<!-- <input type="text" v-model="message">
-		<button type="button"
-		v-clipboard:copy="message"
-		v-clipboard:success="onCopy"
-		v-clipboard:error="onError">Copy!</button> -->
+			</div>
 
-		<!-- {{  fonts }} -->
-		<!-- <link href="https://fonts.googleapis.com/css?family=" rel="stylesheet"> -->
-		<div v-for="(el, i) in getTextElements">div:nth-child({{ i }}) {<br>
-			font-family: '{{ el.styles.fontFamily}}';<br>
-			font-weight: {{ el.styles.fontWeight }} ;<br>
-			font-size: {{ el.styles.fontSize}};<br>
-			line-height: {{ el.styles.lineHeight }};<br>
-			letter-spacing: {{ el.styles.letterSpacing }};<br>
-			text-transform: {{ el.styles.textTransform }};<br>
-			margin-bottom: {{ el.styles.marginBottom }};<br>
-			font-style: normal;<br>
-		}<br><br>
+		</div>
 	</div>
-
-</div>
 </template>
 
 <script>

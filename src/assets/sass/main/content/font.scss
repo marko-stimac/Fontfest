@@ -6,8 +6,13 @@
 		max-width: 100%;
 		border-bottom: 1px solid $color-border;
 		h1 {
-			font-size: 3.5rem;
+			font-size: 1.75rem;
+			margin-bottom: 1rem;
 			margin-right: auto;
+			@media screen and (min-width: $screen-lg-min) {
+				font-size: 2.5rem;
+				margin-bottom: 2rem;
+			}
 		}
 		dl {
 			flex-basis: 150px;
@@ -15,9 +20,11 @@
 		}
 	}
 	.content-wrapper {
-		padding-top: 3.5rem;
-		padding-bottom: 3.5rem;
 		border-bottom: 1px solid $color-border;
+		padding: 2rem 0;
+		@media screen and (min-width: $screen-lg-min) {
+			padding: 3.5rem 0;
+		}
 		& > div {
 			display: flex;
 			align-items: center;
@@ -27,30 +34,23 @@
 			font-weight: 400;
 		}
 		.title {
-			font-size: 48px;
+			font-size: 2rem;
 			margin-right: auto;
 			line-height: 1.35em;
 			@include nowrap();
 		}
 	}
 	.meta-wrapper {
-		padding: 3rem 0 2rem;
 		display: flex;
+		flex-direction: column;
+		@media screen and (min-width: $screen-lg-min) {
+			flex-direction: row;
+			padding: 3rem 0 2rem;
+		}
 		dl {
-			flex-basis: 13rem;
-			&.big {
-				flex-basis: 22rem;
+			@media screen and (min-width: $screen-lg-min) {
+				flex-basis: 13rem;
 			}
 		}
-	}
-	dl {
-		font-size: 1.1rem;
-	}
-	ul {
-		padding-left: 20px;
-	}
-	li {
-		line-height: 1.8em;
-		font-size: 1.1rem;
 	}
 }

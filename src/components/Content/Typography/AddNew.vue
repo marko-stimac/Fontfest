@@ -1,6 +1,6 @@
 <template>
 	<div class="addnew text-center">
-		<button @click="addNew" class="btn">Create new element +</button>
+		<button @click="addNew" class="btn">Add text</button>
 	</div>
 </template>
 
