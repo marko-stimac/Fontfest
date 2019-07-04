@@ -3,7 +3,8 @@
 	background-color: #111;
 	color: #fff !important;
 	.topbar {
-		background: #111;
+		background: #222;
+		border-color: #343434;
 	}
 	.topbar__title {
 		color: #777;
@@ -23,11 +24,19 @@
 	.settings strong {
 		color: #aaa;
 	}
-	.settings, .fontlist, .content__inside {
+	.settings, .fontlist, .content, .content__inside {
 		background: #222;
+	}
+	.settings__selected:after {
+		background: #343434;
 	}
 	.is-editable.active {
 		background: #222;
+	}
+	.content--typography {
+		div {
+			color: #ccc;
+		}
 	}
 	div, p, li {
 		color: #777;
