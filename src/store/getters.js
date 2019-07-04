@@ -89,10 +89,6 @@ export const getters = {
 		return state.settings.darkTheme
 	},
 
-	getDistractionMode(state) {
-		return state.settings.distractionMode
-	},
-
 	getFontSettingsVisibility(state) {
 		return state.settings.fontSettings.visibility
 	},

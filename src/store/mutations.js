@@ -38,13 +38,6 @@ export const mutations = {
 	toggleDarkTheme(state, value) {
 		state.settings.darkTheme = state.settings.darkTheme !== true
 	},
-	// Toggle distraction mode
-	toggleDistractionMode(state, value) {
-		state.settings.distractionMode = state.settings.distractionMode !== true
-	},
-	closeDistractionMode(state, value) {
-		state.settings.distractionMode = false
-	},
 	// Toggle option visibility
 	enableFontSettingsVisibility(state, value) {
 		state.settings.fontSettings.visibility = true

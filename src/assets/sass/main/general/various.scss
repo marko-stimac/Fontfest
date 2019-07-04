@@ -29,19 +29,6 @@ a {
 		padding: 10px 0;
 		margin-right: 40px;
 	}
-	&--close-distraction {
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: #f4f4f4;
-		opacity: 0;
-		visibility: hidden;
-		svg {
-			height: 44px;
-			width: 44px;
-			stroke: #f4f4f4;
-		}
-	}
 	&--favorite {
 		background: $color-primary;
 		color: #fff;

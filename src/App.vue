@@ -1,5 +1,5 @@
 <template>
-	<div id="app" :class="{ 'dark-theme': darkTheme, 'distraction-mode': distractionMode }">
+	<div id="app" :class="{ 'dark-theme': darkTheme }">
 			
 		<div class="leftside">
 			<div class="topbar topbar--sidebar">
@@ -46,14 +46,10 @@
 		},
 		computed: {
 			...mapGetters([
-				'getDarkTheme',
-				'getDistractionMode'
+				'getDarkTheme'
 				]),
 			darkTheme() {
 				return this.getDarkTheme 
-			},
-			distractionMode() {
-				return this.getDistractionMode 
 			},
 			loading() {
 				return true

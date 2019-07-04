@@ -14,7 +14,6 @@
 		<ul>
 			<li>You can use <strong>arrow up</strong> and <strong>arrow down</strong> to trigger font change in a single font presentation</li>
 			<li>You can edit text both in typography mode and in a single font view, just left click on a text field</li>
-			<li>When distraction mode is active you can press <strong>ESC</strong> to exit</li>
 			<li>Randomizing styles does calculations with filtered settings, it only randomizes families and weights</li>
 			<li>If you lock a text element, it won't trigger randomization</li>
 		</ul>

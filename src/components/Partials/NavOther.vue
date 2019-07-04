@@ -43,9 +43,6 @@ export default {
 		toggleDarkTheme() {
 			this.$store.commit('toggleDarkTheme')
 		},
-		toggleDistractionMode() {
-			this.$store.commit('toggleDistractionMode')
-		},
 		randomizeStyles() {
 			this.$store.dispatch('randomizeStyles', this.getFontsAvailable)
 		},

@@ -1,11 +1,5 @@
 <template>
-	<div @keyup.esc="closeDistractionMode">
-
-		<button @click="closeDistractionMode" class="btn btn--close-distraction is-hidden">
-			<svg viewBox="0 0 24 24">
-				<path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-			</svg>
-		</button>
+	<div>
 
 		<NavTypography/>
 
@@ -97,17 +91,6 @@ export default {
 		},
 		removeElement(index) {
 			this.$store.dispatch('removeTextElement', index-1)
-		},
-		listenUserEvent() {
-			var self = this
-			document.onkeydown = function(e) {
-				e = e || window.event;
-				if(e.keyCode == 27)
-					self.$store.commit('closeDistractionMode')
-			};
-		},
-		closeDistractionMode() {
-			this.$store.commit('closeDistractionMode')
 		},
 		toggleLock(index) {
 			this.$store.commit('updateTextElementLock', index-1)

@@ -26,8 +26,7 @@ export const store = new Vuex.Store({
  					activeFontIndex: 0,
  					visibility: false
  				},
- 				darkTheme: false,
- 				distractionMode: false
+ 				darkTheme: false
  			}
  		},
  		getters,
