@@ -72,12 +72,6 @@ export default {
 			fontSettingsVisibility: false,     
 		}
 	},
-	created() {
-
-		// Listen for user key events
-		this.listenUserEvent()
-
-	},
 	components: {
 		NavTypography,
 		Draggable,
