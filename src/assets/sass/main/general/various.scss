@@ -10,9 +10,9 @@ a {
 		color: $color-primary;
 		text-decoration: underline;
 	}
-	&.router-link-active {
+/* 	&.router-link-active {
 		color: initial !important;
-	}
+	} */
 }
 
 .btn {
@@ -51,7 +51,11 @@ a {
 
 dl {
 	dt {
-		font-weight: 700;
+		letter-spacing: 0.055em;
+		color: #898989;
+		text-transform: uppercase;
+		font-size: .75rem !important;
+		font-family: $font-secondary;
 		margin-top: .75rem;
 		margin-bottom: .5rem;
 	}

@@ -6,13 +6,14 @@
 		<div class="content--font__inside">
 
 			<div class="title-wrapper">
+				<div class="text-uppercase">Font name</div>
 				<h1 :style="{ fontFamily: $route.params.name }">{{ $route.params.name }}</h1>
-
 			</div>
 
 
 			<div class="content-wrapper" :style="{ fontFamily: $route.params.name }">
-				<div class="text" v-for="variant in fontVariantsNoItalics">
+				<div class="text-uppercase">Font styles</div>
+				<div class="text" v-for="(variant, index) in fontVariantsNoItalics" :class="'textsize-' + index">
 					<span class="title nowrap" contenteditable="true" :style="{ fontWeight: variant }">
 						{{ text }}
 					</span>
@@ -48,7 +49,7 @@
 				<dl>
 					<dt>Version</dt>
 					<dl>{{ font.version }}</dl>
-					<dt>Last modified</dt>
+					<dt>Last updated</dt>
 					<dd>{{ lastModified }}</dd>
 				</dl>
 				<dl>
@@ -58,6 +59,7 @@
 				</dl>
 			</div>
 
+			<!-- 
 			<div class="files-wrapper">
 				<dl>
 					<dt>Download files</dt>
@@ -70,6 +72,7 @@
 					</dd>
 				</dl>
 			</div>
+			-->
 
 		</div>
 

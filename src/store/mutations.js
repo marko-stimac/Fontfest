@@ -30,13 +30,9 @@ export const mutations = {
 				textTransform: 'initial',
 				fontStyle: 'normal',
 				marginBottom: '1rem'
-			},
-			lock: false
+			}
 		}
 		state.textElements.push(newElement)
-	},
-	toggleDarkTheme(state, value) {
-		state.settings.darkTheme = state.settings.darkTheme !== true
 	},
 	// Toggle option visibility
 	enableFontSettingsVisibility(state, value) {
@@ -50,9 +46,6 @@ export const mutations = {
 	},
 	updateTextElementsOrder(state, textElements) {
 		state.textElements = textElements
-	},
-	updateTextElementLock(state, index) {
-		state.textElements[index].lock = state.textElements[index].lock !== true
 	},
 	// Update single font
 	updateActiveFontFamily(state, payload) {

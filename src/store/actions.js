@@ -33,38 +33,6 @@ export const actions = {
 
 	},
 
-	// Randomize CSS for elements
-	randomizeStyles(context, fontsAvailable) {
-
-		// For each text element
-		context.state.textElements.forEach((el, index) => {
-
-			// Skip if locked
-			if(el.lock)
-				return
-
-			// Randomize font
-			let fontRandom = fontsAvailable[Math.floor(Math.random() * fontsAvailable.length)]
-			// Set new font family
-			el.styles.fontFamily = fontRandom.family
-
-			// Randomize font weight
-			let fontWeightRandom = fontRandom.variants[Math.floor(Math.random() * fontRandom.variants.length)]
-			// If font weight is 'regular' or 'italic' then save it as 400, otherwise remove i
-			if(fontWeightRandom == 'regular' || fontWeightRandom == 'italic')
-				fontWeightRandom = 400
-			else
-				fontWeightRandom = fontWeightRandom.trim('i')
-			// Set new font weight
-			el.styles.fontWeight = fontWeightRandom
-
-			// Load new font
-			let font = fontRandom.family + ':' + fontRandom.variants.join()
-			context.dispatch('loadFontList', font)
-		})
-
-	},
-
 	removeTextElement(context, index) {
 		context.state.textElements.splice(index, 1)
 	}

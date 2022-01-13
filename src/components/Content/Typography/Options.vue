@@ -8,7 +8,7 @@
 		</button>
 
 		<div class="form-group">
-			<label for="fontFamily" class="field-title">Font family (<router-link class="link" :to="{name: 'Font', params: {name: fontFamily}}">view family</router-link>)</label>
+			<label for="fontFamily" class="field-title">Font family (<router-link class="link" :to="{name: 'Font', params: {name: fontFamily}}">view family</router-link>):</label>
 			<select id="fontFamily" class="form-control" v-model="fontFamily">
 				<option :value="font.family" v-for="font in getFontsAvailable">{{ font.family }}</option>
 			</select>
@@ -16,43 +16,43 @@
 		</div>
 
 		<div class="form-group">
-			<div class="field-title">Font weight</div>
+			<div class="field-title">Font weight:</div>
 			<div v-for="weight in fontAvailableWeightsPure">
 				<label><input type="radio" :value="weight" v-model="fontWeight">{{ weight }}</label>
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label for="fontSize" class="field-title">Font size <span>(px)</span></label>
+			<label for="fontSize" class="field-title">Font size <span>(px)</span>:</label>
 			<input id="fontSize" type="number" class="form-control" v-model="fontSize">
 		</div>
 
 		<div class="form-group">
-			<label for="lineHeight" class="field-title">Line height</label>
+			<label for="lineHeight" class="field-title">Line height:</label>
 			<input id="lineHeight" type="number" class="form-control" v-model="lineHeight" step="0.1">
 		</div>
 
 		<div class="form-group">
-			<label for="letterSpacing" class="field-title">Letter spacing <span>(em)</span></label>
+			<label for="letterSpacing" class="field-title">Letter spacing <span>(em)</span>:</label>
 			<input id="letterSpacing" type="number" class="form-control" v-model="letterSpacing" step="0.01">
 		</div>
 
 		<div class="form-group">
-			<div class="field-title">Text transform</div>
-			<div v-for="textTransformOption in textTransformOptions">
-				<label><input type="radio" :value="textTransformOption" v-model="textTransform"> {{ textTransformOption }}</label>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<div class="field-title">Font style</div>
+			<div class="field-title">Font style:</div>
 			<div v-for="fontStyleOption in fontStyleOptions">
-				<label><input type="radio" :value="fontStyleOption" v-model="fontStyle"> {{ fontStyleOption }}</label>
+				<label><input type="radio" :value="fontStyleOption" v-model="fontStyle" name="fontstyle"> {{ fontStyleOption }}</label>
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label for="marginBottom" class="field-title">Margin bottom <span>(rem)</span></label>
+			<div class="field-title">Text transform:</div>
+			<div v-for="textTransformOption in textTransformOptions">
+				<label><input type="radio" :value="textTransformOption" v-model="textTransform" name="texttransform"> {{ textTransformOption }}</label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="marginBottom" class="field-title">Margin bottom <span>(rem)</span>:</label>
 			<input id="marginBottom" type="number" class="form-control" v-model="marginBottom" step="0.5">
 		</div>
 
@@ -127,10 +127,10 @@ export default {
 			if(!variants) return
 
 			// Prepare weight (remove italics, set regular to 400)
-		for(var i=0; i < variants.length; i++) {
-			if(variants[i] == 'regular')
-				weights.push(400)
-			else {
+			for(var i=0; i < variants.length; i++) {
+				if(variants[i] == 'regular')
+					weights.push(400)
+				else {
 					// Parse weight to integer so that we don't include italic
 					let weight = parseInt(variants[i])
 					if(weight)

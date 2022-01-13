@@ -17,7 +17,7 @@ export const store = new Vuex.Store({
  			subsetsActive: 'latin-ext',
  			letterforms: ['serif', 'sans-serif', 'display', 'handwriting', 'monospace'],
  			letterformsActive: ['serif', 'sans-serif', 'display'],
- 			sortingActive: 'alpha',
+ 			sortingActive: 'popularity',
  			filteredName: '',
  			fontParagraph: 'The quick brown fox jumps over the lazy dog',
  			textElements: predefined,
@@ -25,8 +25,7 @@ export const store = new Vuex.Store({
  				fontSettings: {
  					activeFontIndex: 0,
  					visibility: false
- 				},
- 				darkTheme: false
+ 				}
  			}
  		},
  		getters,

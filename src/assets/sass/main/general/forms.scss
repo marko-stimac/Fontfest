@@ -4,15 +4,18 @@
 	.field-title {
 		display: block;
 		margin-bottom: .5rem;
+		font-weight: 700;
+		font-family: $font-secondary;
 		.link {
 			color: $color-primary;
 		}
 	}
 	&__small {
-		font-size: .65rem;
-		line-height: 1;
+		font-size: .85rem;
+		line-height: 1.2;
 		display: block;
 		margin-top: .5rem;
+		opacity: .8;
 	}
 }
 
@@ -26,12 +29,15 @@
 	background-color: #fff;
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
-	&:disabled {
-		opacity: .5;
+	&:focus {
+		outline-color: $color-primary !important;
+	}
+	/* &:disabled {
+		opacity: .2;
 	}
 	~ .field-title {
-		opacity: .5 !important;
-	}
+		opacity: .2 !important;
+	} */
 }
 
 label {
@@ -66,21 +72,22 @@ select {
 		z-index: -1;
 		opacity: 0;
 		visibility: hidden;
-		&:disabled {
+	/* 	&:disabled {
 			~ span.label {
 				cursor: default;
-				opacity: .5;
+				opacity: .2;
 				.sublabel {
 					display: inline-block;
-					opacity: .5;
+					opacity: .2;
 				}
 			}
 			&:checked {
 				~ .checkbox__indicator {
 					background: rgba($color-primary, .5) !important;
+					opacity: .2;
 				}
 			}
-		}
+		} */
 		&:checked {
 			~ .checkbox__indicator {
 				background: linear-gradient(to bottom right, $color-primary, lighten($color-primary, 5%));
@@ -89,11 +96,11 @@ select {
 				}
 			}
 		}
-		&:not(:checked) {
+		/* &:not(:checked) {
 			~ .label {
 				opacity: .6;
 			}
-		}
+		} */
 	}
 	&__indicator {
 		position: absolute;

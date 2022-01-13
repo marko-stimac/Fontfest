@@ -1,24 +1,39 @@
 <template>
 	<div class="settings">
 
-		<div class="settings__info">Filtering <strong>{{ getFontsAvailable.length }}</strong> from <strong>{{ getFontsAll.length }}</strong> fonts</div>
-		<div class="settings__selected">Currently selected: <strong>{{ getFontsFavoritesCount }}</strong></div>
-
-		<div class="settings__group">
-			<label class="settings__group-title">Filter by name:</label>
-			<input class="form-control" type="text" :id="nameActive" v-model="nameActive" @keyup="filterName" :disabled="getFontsFavoritesBool">
+		<div class="sidebar__info">
+			<div class="sidebar__infotop">
+				<div>Filtering <span class="sidebar__strong">{{ getFontsAvailable.length }}</span> from <span class="sidebar__strong">{{ getFontsAll.length }}</span> fonts</div>
+				<div class="sidebar__selected">
+					Favorites: <span class="sidebar__strong">{{ getFontsFavoritesCount }}</span>
+				</div>
+			</div>
+			<div class="checkbox" v-if="getFontsFavoritesCount">
+				<label>
+					<input type="checkbox" v-model="getFontsFavoritesBool" :disabled="!getFontsFavoritesCount">
+						<span class="label">Show favorites only 
+						<!--<span class="sublabel">(<strong>{{ getFontsFavoritesCount }}</strong>)</span>--></span>
+					
+					<div class="checkbox__indicator"></div>
+				</label>
+			</div>
+		</div>
+		
+		<div class="sidebar__group" :class="{ inactive: !nameActive}" v-if="!getFontsFavoritesBool">
+			<label class="sidebar__group-title">Filter by name:</label>
+			<input class="form-control sidebar__nameinput" type="text" :id="nameActive" v-model="nameActive" @keyup="filterName" :disabled="getFontsFavoritesBool">
 		</div>
 
-		<div class="settings__group">
-			<label for="subset" class="settings__group-title">Languages:</label>
+		<div class="sidebar__group" v-if="!getFontsFavoritesBool">
+			<label for="subset" class="sidebar__group-title">Language:</label>
 			<select id="subset" class="form-control" v-model="subsetsActive" :disabled="getFontsFavoritesBool">
 				<option value="all">All</option>
 				<option :value="subset" v-for="subset in getSubsets">{{ subset }}</option>
 			</select>
 		</div>
 
-		<div class="settings__group">
-			<div class="settings__group-title settings__group-title--categories">Categories:</div>
+		<div class="sidebar__group" v-if="!getFontsFavoritesBool">
+			<div class="sidebar__group-title sidebar__group-title--categories">Font type:</div>
 			<div class="checkbox" v-for="letterform in getLetterforms">
 				<label>
 					<input type="checkbox" :value="letterform" v-model="letterformsActive" :disabled="getFontsFavoritesBool">
@@ -28,27 +43,15 @@
 			</div>
 		</div>
 
-		<div class="settings__group">
-			<label class="settings__group-title">Sorted by:</label>
+		<div class="sidebar__group" v-if="!getFontsFavoritesBool">
+			<label class="sidebar__group-title">Sorted by:</label>
 			<select class="form-control" v-model="sortingActive" :disabled="getFontsFavoritesBool">
-				<option value="alpha" id="alpha">Alpha</option>
+				<option value="alpha" id="alpha">Alphabet</option>
 				<option value="date" id="date">Date</option>
 				<option value="popularity" id="popularity">Popularity</option>
 				<option value="style" id="style">Style</option>
 				<option value="trending" id="trending">Trending</option>
 			</select>
-		</div>
-		
-		<div class="settings__group">
-			<div class="checkbox">
-				<label>
-					<input type="checkbox" v-model="getFontsFavoritesBool" :disabled="!getFontsFavoritesCount">
-					<span class="label">Favorites only 
-						<span class="sublabel">(<strong>{{ getFontsFavoritesCount }}</strong>)</span>
-					</span>
-					<div class="checkbox__indicator"></div>
-				</label>
-			</div>
 		</div>
 
 	</div>
@@ -58,10 +61,10 @@
 import { mapGetters } from 'vuex'
 
 export default {
-	name: 'Settings',
+	name: 'sidebar',
 	data() {
 		return {
-			nameActive: ''
+			nameActive: '',
 		}
 	},
 	methods: {

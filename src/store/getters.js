@@ -85,10 +85,6 @@ export const getters = {
 		return state.styles
 	},
 
-	getDarkTheme(state) {
-		return state.settings.darkTheme
-	},
-
 	getFontSettingsVisibility(state) {
 		return state.settings.fontSettings.visibility
 	},
